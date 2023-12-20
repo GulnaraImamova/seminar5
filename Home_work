@@ -63,3 +63,39 @@ for(int i = 0; i < array.GetLength(0); i++)
     Console.WriteLine();
 }
 Console.ReadKey(true);
+
+
+
+
+// Задача 3: Задайте прямоугольный двумерный массив.
+// Напишите программу, которая будет находить строку с
+// наименьшей суммой элементов.
+
+int [,] array = new int [4,2];
+
+int sumInMin = 0;
+int indexMin = 0;
+
+for (int i = 0; i < array.GetLength(0); i++)
+{
+    int sum = 0;
+
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+        array[i,j] = new Random().Next(0, 10);
+        Console.Write(array[i,j] + " ");
+
+        sum += array[i,j];
+    }
+    Console.WriteLine("Cумма " + sum);
+
+if(sum < sumInMin)
+{
+    sumInMin = sum;
+    indexMin = i;
+}
+
+Console.WriteLine();
+}
+
+Console.WriteLine("\nИндекс минимальной = " + indexMin);
